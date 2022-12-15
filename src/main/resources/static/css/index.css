@@ -1,0 +1,9 @@
+@font-face {
+    src: url("../font/BMJUA_ttf.ttf");
+    font-family: "jua";
+}
+
+h1{
+    font-family: "jua", serif;
+    color: aliceblue;
+}
