@@ -43,4 +43,4 @@ application.properties
 *.DS_Store
 
 ### 사진 자료들 ###
-!**/src/main/resources/images
+/resources/images/
