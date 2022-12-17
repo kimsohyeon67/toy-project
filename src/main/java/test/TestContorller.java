@@ -8,6 +8,12 @@ public class TestContorller {
 
 	@GetMapping("/test")
 	public String test() {
+		return "test";
+	}
+
+	@GetMapping("/")
+	public String main() {
 		return "main";
 	}
+
 }
