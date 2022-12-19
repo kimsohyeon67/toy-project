@@ -2,9 +2,14 @@ package toyproject.member;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@ComponentScan(basePackages = "test")
+@ComponentScan(basePackages = "passport")
+@ComponentScan(basePackages = "oauth")
+@EnableJpaRepositories(basePackages = "repository")
+@EntityScan("domain")
 @SpringBootApplication
 public class ToyprojectApplication {
 
