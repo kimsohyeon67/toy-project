@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @ComponentScan(basePackages = "passport")
 @ComponentScan(basePackages = "oauth")
+@ComponentScan(basePackages = "main")
 @EnableJpaRepositories(basePackages = "repository")
 @EntityScan("domain")
 @SpringBootApplication

@@ -10,7 +10,6 @@ body {
     background-repeat : no-repeat;
     background-position-x: center;
     background-position-y: top;
-
     font-family: "jua", serif;
 }
 
@@ -23,7 +22,7 @@ body {
 #content{
     font-size: 30px;
     color: aliceblue;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 .msg{
@@ -33,27 +32,41 @@ body {
     text-decoration: none;
     text-decoration-style: solid;
     color : black;
+    vertical-align : 15px;
 }
 
-#kakao_msg{
+.href{
+    position: relative;
+    z-index: 100;
+    text-decoration-line: none;
+    text-align: center;
+    margin-bottom:30px;
+}
+
+.btn{
+    text-align: center;
+    position: center;
+    margin-bottom: 30px;
+    margin-left : auto;
+    margin-right: auto;
+    width: 300px;
+    height: 50px;
+    border-radius: 15px;
+}
+
+#kakao{
     background-color: #fddc3f;
-    height: 400px;
-    width: 300px;
 }
 
-#naver_msg{
+#naver{
     background-color: #45b860;
-    height: 400px;
-    width: 300px;
 }
 
-#google_msg{
+#google{
     background-color: #ffffff;
-    height: 400px;
-    width: 300px;
 }
 
-/* 별똥별 애니메이션 구분선 */
+/* 별똥별 애니메이션 */
 
 #early2021 .top .pacles {
     position: absolute;
@@ -61,6 +74,9 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
+}
+#early2021{
+    z-index: -1;
 }
 
 #early2021 .top .c1_s img {
@@ -72,7 +88,7 @@ body {
 }
 
 #early2021 .top .c1_s img:nth-child(1) {
-    animation-delay: 0;
+    animation-delay: 0s;
     animation-duration: 1.6s
 }
 
