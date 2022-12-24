@@ -1,0 +1,28 @@
+@font-face {
+    src: url("../font/BMJUA_ttf.ttf");
+    font-family: "jua";
+}
+
+body {
+    background-size: 1500px;
+    background-image: url('/images/back_pc.png');
+    background-color: #0C3887;
+    background-repeat : no-repeat;
+    background-position-x: center;
+    background-position-y: top;
+    font-family: "jua", serif;
+}
+
+#title{
+    font-size: 30px;
+    color: aliceblue;
+    margin-top: 70px;
+}
+
+#ticket_selected{
+    background-size: 1500px;
+    background-color: lightgrey;
+    background-position-x: center;
+    background-position-y: top;
+    display: block;
+}
