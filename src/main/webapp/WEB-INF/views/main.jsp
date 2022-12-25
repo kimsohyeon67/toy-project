@@ -3,7 +3,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>Insert title here</title>
+    <title>WISH TICKET</title>
     <link href="css/main.css" rel="stylesheet" type='text/css'>
 </head>
 <body>
