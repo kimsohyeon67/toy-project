@@ -1,10 +1,12 @@
 package passport;
 
-import domain.PassportDTO;
+import domain.Passport;
 
 public interface PassportService {
 
-	public PassportDTO getPassport(String email);
+	public Passport getPassport(String email);
 	
-	public PassportDTO findById(int passport_num);
+	public Passport findById(int passport_num);
+	
+	public Passport savePassport(Passport dto);
 }

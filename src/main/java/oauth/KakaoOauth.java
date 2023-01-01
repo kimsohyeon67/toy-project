@@ -81,7 +81,7 @@ public class KakaoOauth implements SocialOauth {
              while ((line = br.readLine()) != null) {
                  result += line;
              }
-             System.out.println("response body : " + result);
+             //System.out.println("response body : " + result);
 
              //Gson 라이브러리에 포함된 클래스로 JSON파싱 객체 생성
              JsonParser parser = new JsonParser();
@@ -90,8 +90,8 @@ public class KakaoOauth implements SocialOauth {
              access_token = element.getAsJsonObject().get("access_token").getAsString();
              refresh_token = element.getAsJsonObject().get("refresh_token").getAsString();
 
-             System.out.println("access_token : " + access_token);
-             System.out.println("refresh_token : " + refresh_token);
+             //System.out.println("access_token : " + access_token);
+             //System.out.println("refresh_token : " + refresh_token);
 
              br.close();
              bw.close();
