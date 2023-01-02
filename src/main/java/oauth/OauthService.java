@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import jakarta.servlet.http.HttpServletResponse;
-import domain.PassportDTO;
+import domain.Passport;
 import passport.PassportService;
 
 @Component
@@ -86,7 +86,7 @@ public class OauthService {
         return email;
     }
     
-    public PassportDTO login(String email) {
+    public Passport login(String email) {
          return  passportService.getPassport(email);
          
     }
