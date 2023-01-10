@@ -79,7 +79,7 @@ public class GoogleOauth implements SocialOauth {
         	try {
 				Object obj = parser.parse( responseEntity.getBody().toString());
 				JSONObject jsonObj = (JSONObject) obj;
-				//System.out.println(jsonObj.get("id_token"));
+				System.out.println(jsonObj.get("id_token"));
 				return jsonObj.get("id_token").toString();
 				
         	} catch (ParseException e) {

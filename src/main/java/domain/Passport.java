@@ -1,12 +1,15 @@
 package domain;
 
 
+import jakarta.persistence.*;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.NoArgsConstructor;
 
@@ -14,9 +17,11 @@ import lombok.NoArgsConstructor;
 @EnableJpaAuditing
 @NoArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
-public class PassportDTO {
+public class Passport {
 
 	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "passport_num")
 	int passport_num;
 	
 	@Column(name="user_email", length = 40)
@@ -43,12 +48,15 @@ public class PassportDTO {
 	@Column(name = "mbti", length = 4)
 	String mbti;
 
+	@Column(name = "self_intro", length = 20)
+	String self_intro;
+
 	@Override
 	public String toString() {
 		return passport_num+" "+user_email+
 				" "+nickname+" "+gender+" "+
 				hair+" "+face+" "+icon+" "+case_color+" "
-				+mbti;
+				+mbti + self_intro;
 	}
 
 	public int getPassport_num() {
@@ -122,6 +130,13 @@ public class PassportDTO {
 	public void setMbti(String mbti) {
 		this.mbti = mbti;
 	}
-	
+
+	public String getSelf_intro() {
+		return self_intro;
+	}
+
+	public void setSelf_intro(String self_intro) {
+		this.self_intro = self_intro;
+	}
 	
 }

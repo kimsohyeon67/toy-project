@@ -25,6 +25,8 @@ public class KakaoOauth implements SocialOauth {
     private String KAKAO_SNS_BASE_URL;
 	@Value("${sns.kakao.client.id}")
     private String KAKAO_SNS_CLIENT_ID;
+    @Value("${sns.kakao.client.secret}")
+    private String KAKAO_SNS_CLIENT_SECREAT;
     @Value("${sns.kakao.callback.url}")
     private String KAKAO_SNS_CALLBACK_URL;
 	
@@ -63,7 +65,9 @@ public class KakaoOauth implements SocialOauth {
              StringBuilder sb = new StringBuilder();
              sb.append("grant_type=authorization_code");
              sb.append("&client_id="); // TODO REST_API_KEY 입력
-             sb.append(KAKAO_SNS_CLIENT_ID); 
+             sb.append(KAKAO_SNS_CLIENT_ID);
+             sb.append("&client_secret="); // TODO 발급받은 client_secret 입력
+             sb.append(KAKAO_SNS_CLIENT_SECREAT);
              sb.append("&redirect_uri="); // TODO 인가코드 받은 redirect_uri 입력
              sb.append(KAKAO_SNS_CALLBACK_URL);
              sb.append("&code=" + code);
@@ -81,7 +85,7 @@ public class KakaoOauth implements SocialOauth {
              while ((line = br.readLine()) != null) {
                  result += line;
              }
-             System.out.println("response body : " + result);
+             //System.out.println("response body : " + result);
 
              //Gson 라이브러리에 포함된 클래스로 JSON파싱 객체 생성
              JsonParser parser = new JsonParser();
@@ -90,8 +94,8 @@ public class KakaoOauth implements SocialOauth {
              access_token = element.getAsJsonObject().get("access_token").getAsString();
              refresh_token = element.getAsJsonObject().get("refresh_token").getAsString();
 
-             System.out.println("access_token : " + access_token);
-             System.out.println("refresh_token : " + refresh_token);
+             //System.out.println("access_token : " + access_token);
+             //System.out.println("refresh_token : " + refresh_token);
 
              br.close();
              bw.close();
