@@ -1,9 +1,9 @@
 package passport;
 
+import oauth.SocialLoginType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import domain.Passport;
@@ -16,20 +16,33 @@ public class PassportController {
 	@Autowired
 	PassportService passportService;
 	
-	@GetMapping("/makepassport")
-	public String makePassport(HttpServletRequest request) {
+	@GetMapping("/passport")
+	public ModelAndView makePassport(HttpServletRequest request) {
 		HttpSession session = request.getSession();
+		ModelAndView mv= new ModelAndView();
 		String user_email = "";
 		
 		if(session.getAttribute("user_email")!=null) {
 			user_email = (String) session.getAttribute("user_email");
 		}
 
-		return "passport/make_passport";
+		// 수정 시
+		if(request.getParameter("passport_num")!= null) {
+			int passport_num = Integer.parseInt(request.getParameter("passport_num")) ;
+			Passport passportDto = passportService.findById(passport_num);
+			if(passportDto != null) {
+				mv.addObject("passport_dto", passportDto);
+			}
+			else {
+				mv.setViewName("error");
+			}
+		}
+		mv.setViewName("passport/make_passport");
+		return mv;
 	}
 	
 	
-	@PostMapping("/make")
+	@PostMapping("/passport")
 	public String makePassportProcess(Passport dto,HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		String user_email = "";
@@ -42,19 +55,17 @@ public class PassportController {
 			}
 			
 			dto.setUser_email(user_email);
-			
+
 			Passport result = passportService.savePassport(dto);
 
 		}else {
 			return "error";
 		}
-		
-
 		return "";
 	}
-	
-	@GetMapping("/viewpassport")
-	public ModelAndView getPassport(int passport_num, HttpServletRequest request) {
+
+	@GetMapping("/passport/{passport_num}/info")
+	public ModelAndView getPassport(@PathVariable int passport_num, HttpServletRequest request) {
 		
 		HttpSession session = request.getSession();
 		String user_email = "";
@@ -81,6 +92,62 @@ public class PassportController {
 		
 		return mv;
 	}
-	
-	
+
+	@PostMapping("/passport/{passport_num}")
+	public ModelAndView updatePassport(@PathVariable int passport_num, HttpServletRequest request) {
+
+		HttpSession session = request.getSession();
+		String user_email = "";
+		ModelAndView mv= new ModelAndView();
+
+		if(session.getAttribute("user_email")!=null) {
+			user_email = (String) session.getAttribute("user_email");
+		}
+
+		Passport passportDto = passportService.findById(passport_num);
+
+		if(passportDto != null) {
+			if(passportDto.getUser_email().equals(user_email)) {
+				// 내 여권
+				System.out.println("내 여권");
+			}
+
+			mv.setViewName("passport/view_passport");
+			mv.addObject("passport_dto", passportDto);
+		}
+		else {
+			mv.setViewName("error");
+		}
+
+		return mv;
+	}
+
+	@GetMapping("/passport/{passport_num}")
+	public ModelAndView updatePassport(@PathVariable int passport_num, Passport dto, HttpServletRequest request) {
+
+		HttpSession session = request.getSession();
+		String user_email = "";
+		ModelAndView mv= new ModelAndView();
+
+		if (session.getAttribute("user_email") != null) {
+			user_email = (String) session.getAttribute("user_email");
+		}
+
+		Passport passportDto = passportService.findById(passport_num);
+
+		if (passportDto != null && !user_email.equals("")) {
+			if (passportDto.getUser_email().equals(user_email)) {
+				// 내 여권
+				System.out.println("내 여권");
+			}
+
+			mv.setViewName("passport/make_passport");
+			mv.addObject("passport_dto", passportDto);
+		} else {
+			mv.setViewName("error");
+		}
+
+		return mv;
+	}
+
 }

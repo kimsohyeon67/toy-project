@@ -28,19 +28,18 @@ public class OauthController {
 
 		String email = oauthService.requestAccessToken(socialLoginType, code);
 		Passport dto = oauthService.login(email);
-		
+
 		HttpSession session = request.getSession();
 		session.setAttribute("user_email", email);
-		
 		if (dto == null) {
 			// 여권등록
 			System.out.println("등록된 유저 없음");
-			return "redirect:/makepassport";
-			
+			return "redirect:/passport";
+
 		} else {
-			return "redirect:/viewpassport";
+			return "redirect:/passport/" + dto.getPassport_num() + "/info";
 		}
-		
 	}
 
 }
+
