@@ -1,154 +1,155 @@
 @font-face {
-    src: url("../font/BMJUA_ttf.ttf");
-    font-family: "jua";
+  src: url("../font/BMJUA_ttf.ttf");
+  font-family: "jua";
 }
 
 body {
-    background-size: 1500px;
-    background-image: url('/images/back_pc.png');
-    background-color: #0C3887;
-    background-repeat : no-repeat;
-    background-position-x: center;
-    background-position-y: top;
-    font-family: "jua", serif;
+  background-size: 1500px;
+  background-image: url('/images/back_pc.png');
+  background-color: #0C3887;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: top;
+  font-family: "jua", serif;
 }
 
-#title{
-    font-size: 70px;
-    color: aliceblue;
-    margin-top: 70px;
+#title {
+  font-size: 70px;
+  color: aliceblue;
+  margin-top: 70px;
 }
 
-#content{
-    font-size: 30px;
-    color: aliceblue;
-    margin-bottom: 50px;
+#content {
+  font-size: 30px;
+  color: aliceblue;
+  margin-bottom: 50px;
 }
 
-.msg{
-    text-align: center;
-    font-size: 20px;
-    font-style: normal;
-    text-decoration: none;
-    text-decoration-style: solid;
-    color : black;
-    vertical-align : 15px;
+.msg {
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  text-decoration: none;
+  text-decoration-style: solid;
+  color: black;
+  vertical-align: 15px;
 }
 
-.href{
-    position: relative;
-    z-index: 100;
-    text-decoration-line: none;
-    text-align: center;
-    margin-bottom:30px;
+.href {
+  position: relative;
+  z-index: 100;
+  text-decoration-line: none;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-.btn{
-    text-align: center;
-    position: center;
-    margin-bottom: 30px;
-    margin-left : auto;
-    margin-right: auto;
-    width: 300px;
-    height: 50px;
-    border-radius: 15px;
+.btn {
+  text-align: center;
+  position: center;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  height: 50px;
+  border-radius: 15px;
 }
 
-#kakao{
-    background-color: #fddc3f;
+#kakao {
+  background-color: #fddc3f;
 }
 
-#naver{
-    background-color: #45b860;
+#naver {
+  background-color: #45b860;
 }
 
-#google{
-    background-color: #ffffff;
+#google {
+  background-color: #ffffff;
 }
 
 /* 별똥별 애니메이션 */
 
 #early2021 .top .pacles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
-#early2021{
-    z-index: -1;
+
+#early2021 {
+  z-index: -1;
 }
 
 #early2021 .top .c1_s img {
-    position: absolute;
-    animation: star 20s linear infinite;
-    margin-left: 0;
-    margin-top: 0;
-    opacity: 0;
+  position: absolute;
+  animation: star 20s linear infinite;
+  margin-left: 0;
+  margin-top: 0;
+  opacity: 0;
 }
 
 #early2021 .top .c1_s img:nth-child(1) {
-    animation-delay: 0s;
-    animation-duration: 1.6s
+  animation-delay: 0s;
+  animation-duration: 1.6s
 }
 
 #early2021 .top .c1_s img:nth-child(2) {
-    animation-delay: -1.5s;
-    animation-duration: 1.4s
+  animation-delay: -1.5s;
+  animation-duration: 1.4s
 }
 
 #early2021 .top .c1_s img:nth-child(3) {
-    animation-delay: -0.7s;
-    animation-duration: 1.2s
+  animation-delay: -0.7s;
+  animation-duration: 1.2s
 }
 
 #early2021 .top .c1_s img:nth-child(4) {
-    animation-delay: -1s;
-    animation-duration: 1s
+  animation-delay: -1s;
+  animation-duration: 1s
 }
 
 #early2021 .top .c1_s img:nth-child(5) {
-    animation-delay: 0.2s;
-    animation-duration: 2s
+  animation-delay: 0.2s;
+  animation-duration: 2s
 }
 
 #early2021 .top .c1_s img:nth-child(6) {
-    animation-delay: -2s;
-    animation-duration: 1.8s
+  animation-delay: -2s;
+  animation-duration: 1.8s
 }
 
 #early2021 .top .c1_s img:nth-child(7) {
-    animation-delay: -0.5s;
-    animation-duration: 1.2s
+  animation-delay: -0.5s;
+  animation-duration: 1.2s
 }
 
 #early2021 .top .c1_s img:nth-child(8) {
-    animation-delay: -1.2s;
-    animation-duration: 2s
+  animation-delay: -1.2s;
+  animation-duration: 2s
 }
 
 @keyframes star {
-    from {
-        opacity: 0;
-        margin-left: 0;
-        margin-top: 0
-    }
+  from {
+    opacity: 0;
+    margin-left: 0;
+    margin-top: 0
+  }
 
-    35% {
-        opacity: 1;
-        margin-left: -5%;
-        margin-top: 5%
-    }
+  35% {
+    opacity: 1;
+    margin-left: -5%;
+    margin-top: 5%
+  }
 
-    70% {
-        opacity: 0;
-        margin-left: -10%;
-        margin-top: 10%
-    }
+  70% {
+    opacity: 0;
+    margin-left: -10%;
+    margin-top: 10%
+  }
 
-    to {
-        opacity: 0;
-        margin-left: -10%;
-        margin-top: 10%
-    }
+  to {
+    opacity: 0;
+    margin-left: -10%;
+    margin-top: 10%
+  }
 }
