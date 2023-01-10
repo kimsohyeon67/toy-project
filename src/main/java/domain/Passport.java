@@ -1,10 +1,6 @@
 package domain;
 
 
-import jakarta.persistence.*;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
@@ -12,6 +8,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.NoArgsConstructor;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @Entity
 @EnableJpaAuditing
@@ -19,124 +17,124 @@ import lombok.NoArgsConstructor;
 @EntityListeners(AuditingEntityListener.class)
 public class Passport {
 
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "passport_num")
-	int passport_num;
-	
-	@Column(name="user_email", length = 40)
-	String user_email;
-	
-	@Column(name="nickname",length = 10)
-	String nickname;
+    @Column(name = "passport_num")
+    int passport_num;
 
-	@Column(name="gender",length = 1)
-	String gender;
+    @Column(name = "user_email", length = 40)
+    String user_email;
 
-	@Column(name="hair")
-	int hair;
-	
-	@Column(name = "face")
-	int face;
-	
-	@Column(name = "icon")
-	int icon;
-	
-	@Column(name = "case_color")
-	int case_color;
+    @Column(name = "nickname", length = 10)
+    String nickname;
 
-	@Column(name = "mbti", length = 4)
-	String mbti;
+    @Column(name = "gender", length = 1)
+    String gender;
 
-	@Column(name = "self_intro", length = 20)
-	String self_intro;
+    @Column(name = "hair")
+    int hair;
 
-	@Override
-	public String toString() {
-		return passport_num+" "+user_email+
-				" "+nickname+" "+gender+" "+
-				hair+" "+face+" "+icon+" "+case_color+" "
-				+mbti + self_intro;
-	}
+    @Column(name = "face")
+    int face;
 
-	public int getPassport_num() {
-		return passport_num;
-	}
+    @Column(name = "icon")
+    int icon;
 
-	public void setPassport_num(int passport_num) {
-		this.passport_num = passport_num;
-	}
+    @Column(name = "case_color")
+    int case_color;
 
-	public String getUser_email() {
-		return user_email;
-	}
+    @Column(name = "mbti", length = 4)
+    String mbti;
 
-	public void setUser_email(String user_email) {
-		this.user_email = user_email;
-	}
+    @Column(name = "self_intro", length = 20)
+    String self_intro;
 
-	public String getNickname() {
-		return nickname;
-	}
+    @Override
+    public String toString() {
+        return passport_num + " " + user_email +
+            " " + nickname + " " + gender + " " +
+            hair + " " + face + " " + icon + " " + case_color + " "
+            + mbti + self_intro;
+    }
 
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
-	}
+    public int getPassport_num() {
+        return passport_num;
+    }
 
-	public String getGender() {
-		return gender;
-	}
+    public void setPassport_num(int passport_num) {
+        this.passport_num = passport_num;
+    }
 
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
+    public String getUser_email() {
+        return user_email;
+    }
 
-	public int getHair() {
-		return hair;
-	}
+    public void setUser_email(String user_email) {
+        this.user_email = user_email;
+    }
 
-	public void setHair(int hair) {
-		this.hair = hair;
-	}
+    public String getNickname() {
+        return nickname;
+    }
 
-	public int getFace() {
-		return face;
-	}
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
 
-	public void setFace(int face) {
-		this.face = face;
-	}
+    public String getGender() {
+        return gender;
+    }
 
-	public int getIcon() {
-		return icon;
-	}
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
-	public void setIcon(int icon) {
-		this.icon = icon;
-	}
+    public int getHair() {
+        return hair;
+    }
 
-	public int getCase_color() {
-		return case_color;
-	}
+    public void setHair(int hair) {
+        this.hair = hair;
+    }
 
-	public void setCase_color(int case_color) {
-		this.case_color = case_color;
-	}
+    public int getFace() {
+        return face;
+    }
 
-	public String getMbti() {
-		return mbti;
-	}
+    public void setFace(int face) {
+        this.face = face;
+    }
 
-	public void setMbti(String mbti) {
-		this.mbti = mbti;
-	}
+    public int getIcon() {
+        return icon;
+    }
 
-	public String getSelf_intro() {
-		return self_intro;
-	}
+    public void setIcon(int icon) {
+        this.icon = icon;
+    }
 
-	public void setSelf_intro(String self_intro) {
-		this.self_intro = self_intro;
-	}
-	
+    public int getCase_color() {
+        return case_color;
+    }
+
+    public void setCase_color(int case_color) {
+        this.case_color = case_color;
+    }
+
+    public String getMbti() {
+        return mbti;
+    }
+
+    public void setMbti(String mbti) {
+        this.mbti = mbti;
+    }
+
+    public String getSelf_intro() {
+        return self_intro;
+    }
+
+    public void setSelf_intro(String self_intro) {
+        this.self_intro = self_intro;
+    }
+
 }
