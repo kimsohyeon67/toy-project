@@ -1,6 +1,7 @@
 package domain;
 
 
+import jakarta.persistence.*;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
@@ -47,12 +48,15 @@ public class Passport {
 	@Column(name = "mbti", length = 4)
 	String mbti;
 
+	@Column(name = "self_intro", length = 20)
+	String self_intro;
+
 	@Override
 	public String toString() {
 		return passport_num+" "+user_email+
 				" "+nickname+" "+gender+" "+
 				hair+" "+face+" "+icon+" "+case_color+" "
-				+mbti;
+				+mbti + self_intro;
 	}
 
 	public int getPassport_num() {
@@ -126,6 +130,13 @@ public class Passport {
 	public void setMbti(String mbti) {
 		this.mbti = mbti;
 	}
-	
+
+	public String getSelf_intro() {
+		return self_intro;
+	}
+
+	public void setSelf_intro(String self_intro) {
+		this.self_intro = self_intro;
+	}
 	
 }

@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import domain.Passport;
-import repository.PassportRepository;
+import passport.repository.PassportRepository;
 
 @Service("passportservice")
 public class PassportServiceImpl implements PassportService {
