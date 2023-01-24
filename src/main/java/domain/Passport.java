@@ -56,7 +56,7 @@ public class Passport {
 		return passport_num+" "+user_email+
 				" "+nickname+" "+gender+" "+
 				hair+" "+face+" "+icon+" "+case_color+" "
-				+mbti + self_intro;
+				+mbti +" "+self_intro;
 	}
 
 	public int getPassport_num() {

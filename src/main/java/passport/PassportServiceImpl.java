@@ -9,23 +9,22 @@ import repository.PassportRepository;
 @Service("passportservice")
 public class PassportServiceImpl implements PassportService {
 
-	@Autowired
-	PassportRepository passportRepository;
-	
-	@Override
-	public Passport getPassport(String email) {
-		return passportRepository.findByEmail(email);
-	}
+    @Autowired
+    PassportRepository passportRepository;
 
-	@Override
-	public Passport findById(int passport_num) {
-		return passportRepository.findById(passport_num);
-	}
+    @Override
+    public Passport getPassport(String email) {
+        return passportRepository.findByEmail(email);
+    }
 
-	@Override
-	public Passport savePassport(Passport dto) {
-		return passportRepository.save(dto);
-	}
+    @Override
+    public Passport findById(int passport_num) {
+        return passportRepository.findById(passport_num);
+    }
 
-	
+    @Override
+    public Passport savePassport(Passport dto) {
+        return passportRepository.save(dto);
+    }
+
 }
