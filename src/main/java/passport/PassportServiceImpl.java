@@ -1,9 +1,8 @@
 package passport;
 
+import domain.Passport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import domain.Passport;
 import repository.PassportRepository;
 
 @Service("passportservice")

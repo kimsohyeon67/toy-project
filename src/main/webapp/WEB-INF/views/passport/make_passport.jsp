@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>✈️여권만들기</title>
     <link href="css/make_passport.css" rel="stylesheet" type='text/css'>
-    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-3.6.1.min.js"></script>
     <script src="js/make_passport.js"></script>
 
 </head>
@@ -67,18 +67,22 @@
                 <div id="text-info-box">
                     <label for="nickname">NickName</label>
                     <input type="text" placeholder="닉네임을 입력해보세요!" name="nickname" id="nickname"
-                           maxlength="10" value="">
+                           maxlength="10" value=${passport_dto.nickname}>
                     <label for="mbti">MBTI</label>
                     <input type="text" placeholder="mbit를 입력해보세요!" name="mbti" id="mbti"
-                           maxlength="4" value="">
+                           maxlength="4" value=${passport_dto.mbti}>
                     <label for="gender">Gender</label>
                     <select name="gender" id="gender">
-                        <option value="M">M</option>
-                        <option value="F">F</option>
+                        <option value="M" ${passport_dto.gender == "M" ? "selected=selected" : ""}>
+                            M
+                        </option>
+                        <option value="F" ${passport_dto.gender == "F" ? "selected=selected" : ""}>
+                            F
+                        </option>
                     </select>
                     <label for="self_intro">Self Introduce</label>
                     <input type="text" placeholder="나를 소개해보세요!" name="self_intro" id="self_intro"
-                           maxlength="20" value="">
+                           maxlength="20" value=${passport_dto.self_intro}>
                     <input type="hidden" name="case_color" id="case_color" value="1">
                     <input type="hidden" name="icon" id="icon" value="1">
                     <input type="hidden" name="hair" id="hidden_body" value="1">

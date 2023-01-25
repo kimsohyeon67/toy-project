@@ -5,8 +5,7 @@
 <html>
 <head>
     <link href="../../css/view_passport.css" rel="stylesheet" type='text/css'>
-    <script src="../../js/jquery-3.6.0.min.js"></script>
-    <script src="../../js/view_passport.js"></script>
+    <script src="../../js/jquery-3.6.1.min.js"></script>
     <script>
       $(document).ready(function () {
         $('#passport-modify-btn').click(function () {
@@ -55,6 +54,9 @@
                     <div name="self_intro" class="passport-info"
                          id="self_intro">${passport_dto.self_intro}</div>
                 </div>
+            </div>
+            <div>
+                <button id="passport-modify-btn">여권 수정하기</button>
             </div>
         </div>
     </form>
